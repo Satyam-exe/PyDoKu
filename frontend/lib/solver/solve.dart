@@ -1,6 +1,8 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:frontend/api/requests.dart';
+import 'package:frontend/utility/dialogs/normal_dialog.dart';
 
 String convertTableToString(List<List<int>> sudokuTable) {
   final sudokuString = sudokuTable
@@ -21,11 +23,16 @@ List<List<int>> convertStringToTable(String sudokuString) {
   return sudokuTable;
 }
 
-Future<List<List<int>>> solveSudoku(List<List<int>> board) async {
+Future<List<List<int>>?> solveSudoku(List<List<int>> board) async {
   final sudokuString = convertTableToString(board);
   final response = await getSolvedResponse(sudokuString);
-  final solution = jsonDecode(response.body)['solution'];
-  final solvedSudokuBoard = convertStringToTable(solution);
-  return solvedSudokuBoard;
+  debugPrint(response.body);
+  final responseBody = jsonDecode(response.body);
+  if (responseBody['solution'] != null) {
+    final solution = responseBody['solution'];
+    final solvedSudokuBoard = convertStringToTable(solution);
+    return solvedSudokuBoard;
+  }
+  return null;
 }
 
