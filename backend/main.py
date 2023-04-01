@@ -11,7 +11,7 @@ class SolvePayload(BaseModel):
 
 
 @app.post("/solve/")
-async def say_hello(payload: SolvePayload = None):
+async def solve_sudoku_api(payload: SolvePayload = None):
     sudoku_str = payload.sudoku_str
     puzzle = []
     for i in range(9):
