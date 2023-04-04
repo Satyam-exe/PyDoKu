@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Sudoku!"),
+          title: const Text("Sudoku Solver"),
         ),
         body: const SudokuSolverView(),
       ),

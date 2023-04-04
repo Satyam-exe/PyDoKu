@@ -15,12 +15,14 @@ class KeyPadCell extends StatelessWidget {
         onPressed: () {
           final String message = number == 0
               ? 'Use to clear squares'
-              : 'Fill all squares with value $number';
+              : 'Fill squares with value $number';
           ScaffoldMessenger.of(context).hideCurrentSnackBar();
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(message),
-            duration: const Duration(seconds: 1),
-          ));
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(message),
+              duration: const Duration(seconds: 1),
+            ),
+          );
 
           // Setting activeNumber here...
           activeNumber[0] = number;

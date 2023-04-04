@@ -26,12 +26,17 @@ class KeyPad extends StatelessWidget {
   }
 
   List<Widget> _getRow(int rowNumber) {
-    return List.generate(numColumns, (int colNumber) {
-      return Padding(
-        padding: const EdgeInsets.all(5),
-        child: KeyPadCell(
-            numColumns * rowNumber + colNumber, activeNumber),
-      );
-    });
+    return List.generate(
+      numColumns,
+      (int colNumber) {
+        return Padding(
+          padding: const EdgeInsets.all(5),
+          child: KeyPadCell(
+            numColumns * rowNumber + colNumber,
+            activeNumber,
+          ),
+        );
+      },
+    );
   }
 }

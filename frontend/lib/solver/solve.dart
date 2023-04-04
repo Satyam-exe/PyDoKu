@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:frontend/api/requests.dart';
-import 'package:frontend/utility/dialogs/normal_dialog.dart';
 
 String convertTableToString(List<List<int>> sudokuTable) {
   final sudokuString = sudokuTable

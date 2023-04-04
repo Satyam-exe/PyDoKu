@@ -41,7 +41,7 @@ class _SudokuSolverViewState extends State<SudokuSolverView> {
               Expanded(
                 flex: 5,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 30.0),
                   child: ElevatedButton(
                     child: const Text('Solve!'),
                     onPressed: () async {
@@ -78,7 +78,7 @@ class _SudokuSolverViewState extends State<SudokuSolverView> {
               Expanded(
                 flex: 5,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 30.0),
                   child: ElevatedButton(
                     child: const Text('Reset Board'),
                     onPressed: () async {
